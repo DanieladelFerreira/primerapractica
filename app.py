@@ -1,2 +1,11 @@
-print ('Este es mi primer vez usando Git, Github y Visual Sudio Code')
-print ('Esta es mi primera modificacion al codigo del archivo app')
+from flask import Flask, render_template
+app = Flask(__name__)
+
+@app.route('/')
+
+def home():
+    return render_template('home-banking.html')
+
+if __name__ == '__main__':
+
+    app.run(debug=True)
