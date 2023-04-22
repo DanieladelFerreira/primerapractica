@@ -1,5 +1,4 @@
 from flask import Flask, render_template
-
 app = Flask(__name__)
 
 @app.route('/')
@@ -10,6 +9,9 @@ def home():
     return render_template('home-banking.html',
                            saludo=persona_titular.saludo(),
                            movements=persona_titular.obtener_todos_los_movimientos())
+@app.route('/proceso')
+def procesar():
+    return render_template('proceso.html')
 
 
 
